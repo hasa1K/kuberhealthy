@@ -5,8 +5,9 @@ package status
 
 // Report is the format expected by the /externalCheckStatus endpoint
 type Report struct {
-	Errors []string
-	OK     bool
+	Successes []string
+	Errors    []string
+	OK        bool
 }
 
 // NewReport creates a new error report to be sent to the server.  If
@@ -22,5 +23,12 @@ func NewReport(errorMessages []string) Report {
 	return Report{
 		Errors: errorMessages,
 		OK:     ok,
+	}
+}
+
+func NewSuccessReport(successMessages []string) Report {
+	return Report{
+		Successes: successMessages,
+		OK:        true,
 	}
 }

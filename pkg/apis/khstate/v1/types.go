@@ -32,6 +32,7 @@ type KuberhealthyState struct {
 type WorkloadDetails struct {
 	OK          bool     `json:"OK" yaml:"OK"`                   // true or false status of the khWorkload, whether or not it completed successfully
 	Errors      []string `json:"Errors" yaml:"Errors"`           // the list of errors reported from the khWorkload run
+	Successes   []string `json:"Successes" yaml:"Successes"`
 	RunDuration string   `json:"RunDuration" yaml:"RunDuration"` // the time it took for the khWorkload to complete
 	Namespace   string   `json:"Namespace" yaml:"Namespace"`     // the namespace the khWorkload was run in
 	Node        string   `json:"Node" yaml:"Node"`               // the node the khWorkload ran on

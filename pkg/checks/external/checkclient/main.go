@@ -41,6 +41,16 @@ func ReportSuccess() error {
 	return sendReport(newReport)
 }
 
+func ReportSuccessWithMsg(successMsg []string) error {
+	writeLog("DEBUG: Reporting SUCCESS")
+
+	// make a new report without errors
+	newReport := status.NewSuccessReport(successMsg)
+
+	// send the payload
+	return sendReport(newReport)
+}
+
 // ReportFailure reports that the external checker has found problems.  You may
 // pass a slice of error message strings that will surface in the Kuberhealthy
 // status page for more context on the failure.  We do not return an error here

@@ -1470,6 +1470,7 @@ func (k *Kuberhealthy) externalCheckReportHandler(w http.ResponseWriter, r *http
 	details := khstatev1.NewWorkloadDetails(khWorkload)
 	details.Errors = state.Errors
 	details.OK = state.OK
+	details.Successes = state.Successes
 	details.RunDuration = checkRunDuration
 	details.Namespace = podReport.Namespace
 	details.CurrentUUID = podReport.UUID

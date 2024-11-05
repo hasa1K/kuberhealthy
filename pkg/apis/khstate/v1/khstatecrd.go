@@ -125,6 +125,7 @@ func NewWorkloadDetails(workloadType KHWorkload) WorkloadDetails {
 	return WorkloadDetails{
 		Errors:     []string{},
 		khWorkload: &workloadType,
+		Successes:  []string{},
 	}
 }
 
