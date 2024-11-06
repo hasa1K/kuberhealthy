@@ -29,6 +29,7 @@ func NewReport(errorMessages []string) Report {
 func NewSuccessReport(successMessages []string) Report {
 	return Report{
 		Successes: successMessages,
+		Errors:    []string{},
 		OK:        true,
 	}
 }
